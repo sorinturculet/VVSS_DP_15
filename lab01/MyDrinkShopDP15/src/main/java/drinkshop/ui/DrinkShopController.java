@@ -23,7 +23,8 @@ public class DrinkShopController {
     @FXML private TableColumn<Product, Double> colProdPrice;
     @FXML private TableColumn<Product, CategorieBautura> colProdCategorie;
     @FXML private TableColumn<Product, TipBautura> colProdTip;
-    @FXML private TextField txtProdName, txtProdPrice;
+    @FXML private TextField txtProdName;
+    @FXML private TextField txtProdPrice;
     @FXML private ComboBox<CategorieBautura> comboProdCategorie;
     @FXML private ComboBox<TipBautura> comboProdTip;
 
@@ -35,7 +36,8 @@ public class DrinkShopController {
     @FXML private TableView<IngredientReteta> newRetetaTable;
     @FXML private TableColumn<IngredientReteta, String> colNewIngredName;
     @FXML private TableColumn<IngredientReteta, Double> colNewIngredCant;
-    @FXML private TextField txtNewIngredName, txtNewIngredCant;
+    @FXML private TextField txtNewIngredName;
+    @FXML private TextField txtNewIngredCant;
 
     // ---------- ORDER (CURRENT) ----------
     @FXML private TableView<OrderItem> currentOrderTable;
@@ -120,16 +122,23 @@ public class DrinkShopController {
             alert.showAndWait();
             return;
         }else
-        if (service.getAllProducts().stream().filter(p->p.getId()==r.getId()).toList().size()>0) {
+        if (service.getAllProducts().stream().anyMatch(p -> p.getId() == r.getId())) {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Error");
             alert.setHeaderText("Exista un produs cu reteta adaugata.");
             alert.showAndWait();
             return;
         }
+        double price;
+        try {
+            price = Double.parseDouble(txtProdPrice.getText());
+        } catch (NumberFormatException e) {
+            showError("Pretul introdus nu este valid.");
+            return;
+        }
         Product p = new Product(r.getId(),
                 txtProdName.getText(),
-                Double.parseDouble(txtProdPrice.getText()),
+                price,
                 comboProdCategorie.getValue(),
                 comboProdTip.getValue());
         service.addProduct(p);
@@ -140,8 +149,15 @@ public class DrinkShopController {
     private void onUpdateProduct() {
         Product selected = productTable.getSelectionModel().getSelectedItem();
         if (selected == null) return;
+        double price;
+        try {
+            price = Double.parseDouble(txtProdPrice.getText());
+        } catch (NumberFormatException e) {
+            showError("Pretul introdus nu este valid.");
+            return;
+        }
         service.updateProduct(selected.getId(), txtProdName.getText(),
-                Double.parseDouble(txtProdPrice.getText()),
+                price,
                 comboProdCategorie.getValue(), comboProdTip.getValue());
         initData();
     }
@@ -167,8 +183,14 @@ public class DrinkShopController {
     // ---------- RETETA NOUA ----------
     @FXML
     private void onAddNewIngred() {
-        newRetetaList.add(new IngredientReteta(txtNewIngredName.getText(),
-                Double.parseDouble(txtNewIngredCant.getText())));
+        double cantitate;
+        try {
+            cantitate = Double.parseDouble(txtNewIngredCant.getText());
+        } catch (NumberFormatException e) {
+            showError("Cantitatea introdusa nu este valida.");
+            return;
+        }
+        newRetetaList.add(new IngredientReteta(txtNewIngredName.getText(), cantitate));
     }
 
     @FXML
