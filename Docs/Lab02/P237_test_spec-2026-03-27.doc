@@ -1,0 +1,120 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><title>testspec Proiect237 - tair3650_BBT</title>
+<link type="text/css" rel="stylesheet" href="https://www.scs.ubbcluj.ro/testlink/gui/themes/default/css/tl_documents.css" />
+<style type="text/css" media="print">.notprintable { display:none;}</style>
+</head>
+<body>
+<div>
+<div style="float:right;">TestLink Community [configure $tlCfg-&gt;document_generator-&gt;company_name]</div>
+<div>&nbsp;</div><hr />
+<p style="text-align: center;"><img alt="TestLink logo" title="configure using $tlCfg->document_generator->company_logo"  width= height= src="https://www.scs.ubbcluj.ro/testlink/gui/themes/default/images/tl-logo-transparent-25.png" /></p></div>
+<div class="doc_title"><p>Test Specification</p></div>
+<div class="doc_title" style="text-align:left;margin: auto;"><p>Test Project: Proiect237<br/>Test Suite: Proiect237 - tair3650_BBT</p></div>
+<div class="summary"><p id="printedby">Printed by TestLink on 27/03/2026</p></div>
+<div class="pagefooter" id="copyright">2012 &copy; TestLink Community</div>
+<h1 class="general" style="page-break-before: always">Table Of Contents</h1><div class="toc"><p style="padding-left: 20px;"><b><a href="#toc_1">1.tair3650_BBT</a></b></p>
+<p style="padding-left: 45px;"><a href="#toc_tc28808">P237-26: TC_ECP_VALID_updateProduct</a></p><p style="padding-left: 45px;"><a href="#toc_tc28810">P237-27: TC_ECP_INVALID_updateProduct</a></p><p style="padding-left: 45px;"><a href="#toc_tc28812">P237-28: TC_BVA_VALID_updateProduct</a></p><p style="padding-left: 45px;"><a href="#toc_tc28814">P237-29: TC_BVA_INVALID_updateProduct</a></p></div><h1 class="doclevel" >Scope</h1>
+<div class="txtlevel"><p>Proiect de testare pentru studentii din grupa 237.</p></div>
+ <br/><a name='toc_1'></a>
+<h1 class='doclevel'>1.Test Suite : tair3650_BBT</h1>
+<div><p>Lab02 - ECP/BVA</p>
+</div><a name="toc_tc28808"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case P237-26: TC_ECP_VALID_updateProduct&nbsp;<span style="font-size: 80%;">[Version  : 1]</span></th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">tair3650</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>ECP valid - updateProduct cu id si price valide</p>
+
+<p>Steps: Se apeleaza updateProduct(1, &quot;NumeNou&quot;, 10.5, JUICE, WATER_BASED).</p>
+
+<p>Expected result: Produsul este actualizat cu succes. Nu se arunca exceptie.</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>Exista un produs cu id=1 in repository.</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Importance:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td > name of the autotest class:</td><td  colspan = "3" ></td></tr>
+<tr><td > name of the test method:</td><td  colspan = "3" ></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">tair3650_F01:  F01 - Actualizarea detaliilor unui produs [Version : 1]<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span></td><td colspan="3">&nbsp;None<br/></td></tr>
+</table>
+</div>
+<a name="toc_tc28810"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case P237-27: TC_ECP_INVALID_updateProduct&nbsp;<span style="font-size: 80%;">[Version  : 1]</span></th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">tair3650</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><ul>
+	<li>
+	<p>Summary<br />
+	ECP non-valid - id invalid (id&lt;=0)</p>
+	</li>
+	<li>
+	<p>Steps<br />
+	Se apeleaza updateProduct(0, &quot;NumeNou&quot;, 10.5, JUICE, WATER_BASED).</p>
+	</li>
+	<li>
+	<p>Expected result<br />
+	Se arunca ValidationException cu mesajul &quot;ID invalid!&quot;</p>
+	</li>
+</ul>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>Parametrii name, price, categorie, tip sunt valori valide.</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Importance:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td > name of the autotest class:</td><td  colspan = "3" ></td></tr>
+<tr><td > name of the test method:</td><td  colspan = "3" ></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">tair3650_F01:  F01 - Actualizarea detaliilor unui produs [Version : 1]<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span></td><td colspan="3">&nbsp;None<br/></td></tr>
+</table>
+</div>
+<a name="toc_tc28812"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case P237-28: TC_BVA_VALID_updateProduct&nbsp;<span style="font-size: 80%;">[Version  : 1]</span></th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">tair3650</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><ul>
+	<li>
+	<p>Summary<br />
+	BVA valid - valoare de frontiera valida pentru price</p>
+	</li>
+	<li>
+	<p>Steps<br />
+	Se apeleaza updateProduct(1, &quot;ProdusBVA&quot;, 0.01, JUICE, WATER_BASED).</p>
+	</li>
+	<li>
+	<p>Expected result<br />
+	Produsul este actualizat cu succes. Nu se arunca exceptie.</p>
+	</li>
+</ul>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>Exista un produs cu id=1 in repository.</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Importance:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td > name of the autotest class:</td><td  colspan = "3" ></td></tr>
+<tr><td > name of the test method:</td><td  colspan = "3" ></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">tair3650_F01:  F01 - Actualizarea detaliilor unui produs [Version : 1]<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span></td><td colspan="3">&nbsp;None<br/></td></tr>
+</table>
+</div>
+<a name="toc_tc28814"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case P237-29: TC_BVA_INVALID_updateProduct&nbsp;<span style="font-size: 80%;">[Version  : 1]</span></th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">tair3650</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><ul>
+	<li>
+	<p>Summary<br />
+	BVA non-valid - valoare de frontiera invalida pentru price</p>
+	</li>
+	<li>
+	<p>Steps<br />
+	Se apeleaza updateProduct(1, &quot;ProdusBVA&quot;, 0.00, JUICE, WATER_BASED).</p>
+	</li>
+	<li>
+	<p>Expected result<br />
+	Se arunca ValidationException cu mesajul &quot;Pret invalid!&quot;</p>
+	</li>
+</ul>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>Exista un produs cu id=1 in repository. Parametrul id este valid.</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Importance:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td > name of the autotest class:</td><td  colspan = "3" ></td></tr>
+<tr><td > name of the test method:</td><td  colspan = "3" ></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">tair3650_F01:  F01 - Actualizarea detaliilor unui produs [Version : 1]<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span></td><td colspan="3">&nbsp;None<br/></td></tr>
+</table>
+</div>
+
+</body>
+</html>
