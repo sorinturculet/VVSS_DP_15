@@ -2,7 +2,22 @@
   "permissions": {
     "allow": [
       "Bash(python3 -c \":*)",
-      "Bash(python -c \":*)"
+      "Bash(python -c \":*)",
+      "Bash(find c:/Users/sorn/Documents/GitHub/UBB/6th_semester/VVSS/lab02 -type f -name *.md -o -name *.txt -o -name *.xml -o -name *.pdf)",
+      "Bash(mvn test:*)",
+      "Bash(python3 -c \"import openpyxl; print\\(''ok''\\)\")",
+      "Bash(python -c \"import openpyxl; print\\(''ok''\\)\")",
+      "Bash(pdftotext -layout c:/Users/sorn/Documents/GitHub/UBB/6th_semester/VVSS/lab03/Lab03.pdf -)",
+      "Bash(ls *.pdf)",
+      "Bash(where pdftotext:*)",
+      "Bash(python -c \"import pdfplumber; print\\(''pdfplumber ok''\\)\")",
+      "Bash(python -c \"import pypdf; print\\(''pypdf ok''\\)\")",
+      "Bash(pdftotext c:/Users/sorn/Documents/GitHub/UBB/6th_semester/VVSS/lab03/PlantUML_Language_Reference_Guide_en.pdf -)",
+      "Bash(pdftotext \"c:/Users/sorn/Documents/GitHub/UBB/6th_semester/VVSS/lab03/Lab03.pdf\" -)",
+      "Bash(ls -la *.xlsx)",
+      "Bash(pip install:*)",
+      "Bash(mkdir -p \"c:/Users/sorn/Documents/GitHub/UBB/6th_semester/VVSS/Docs/Lab03\")",
+      "Bash(cp \"c:/Users/sorn/Documents/GitHub/UBB/6th_semester/VVSS/lab03/Lab03_WBT_TCs_Form.xlsx\" \"c:/Users/sorn/Documents/GitHub/UBB/6th_semester/VVSS/Docs/Lab03/Lab03_WBT_TCs_Form.xlsx\")"
     ]
   }
 }
