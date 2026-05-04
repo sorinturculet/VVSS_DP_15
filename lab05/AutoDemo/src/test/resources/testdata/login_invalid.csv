@@ -1,0 +1,3 @@
+username,password,errorMessagePart
+standard_user,bad_password,Username and password do not match
+locked_out_user,secret_sauce,Sorry, this user has been locked out
